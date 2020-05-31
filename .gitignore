@@ -1,0 +1,17 @@
+# idea
+.idea/
+*.iml
+
+# eclipse
+.project
+.classpath
+.factorypath
+.settings
+
+# maven
+target/
+catalina.base_IS_UNDEFINED/
+nbproject/
+
+# mac
+.DS_Store

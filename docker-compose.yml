@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  tomcat:
+    container_name: ast-cloud-config
+    image: astvision/spring-cloud-config
+    hostname: ast-cloud-config
+    restart: always
+    environment:
+      CATALINA_OPTS: -Xms128m -Xmx256m -Dspring.profiles.active=production
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - /opt/ast-starter/config:/opt/ast-starter/config
+    networks:
+      - ast_starter
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: 10m
+
+networks:
+    ast_starter:
+    driver: bridge
