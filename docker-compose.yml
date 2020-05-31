@@ -3,14 +3,18 @@ version: "3.7"
 services:
   tomcat:
     container_name: ast-cloud-config
-    image: astvision/spring-cloud-config
+    #image: astvision/spring-cloud-config
+    image: ast-spring-cloud-config
     hostname: ast-cloud-config
     restart: always
     environment:
       CATALINA_OPTS: -Xms128m -Xmx256m -Dspring.profiles.active=production
+      CLOUD_CONFIG_PATH: /opt/ast-starter/config
+      CLOUD_CONFIG_AUTH_ENABLED: "true"
+      CLOUD_CONFIG_USERNAME: test
+      CLOUD_CONFIG_PASSWORD: test123
     ports:
-      - 8080:8080
-      - 8443:8443
+      - 8888:8888
     volumes:
       - /opt/ast-starter/config:/opt/ast-starter/config
     networks:
@@ -23,4 +27,4 @@ services:
 
 networks:
     ast_starter:
-    driver: bridge
+      driver: bridge

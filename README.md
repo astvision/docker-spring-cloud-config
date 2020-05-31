@@ -6,6 +6,7 @@ docker image prune -af
 ### Build docker image
 ```
 docker build .
+// docker build -t ast-spring-cloud-config .
 // docker build --tag astvision/spring-cloud-config:1.0 .
 ```
 
