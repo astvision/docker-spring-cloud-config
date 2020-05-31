@@ -3,8 +3,8 @@ version: "3.7"
 services:
   tomcat:
     container_name: ast-cloud-config
-    #image: astvision/spring-cloud-config
-    image: ast-spring-cloud-config
+    image: astvision/spring-cloud-config
+    #image: ast-spring-cloud-config
     hostname: ast-cloud-config
     restart: always
     environment:
