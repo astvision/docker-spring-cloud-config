@@ -8,15 +8,15 @@ services:
     hostname: ast-cloud-config
     restart: always
     environment:
-      CATALINA_OPTS: -Xms128m -Xmx256m -Dspring.profiles.active=production
-      CLOUD_CONFIG_PATH: /opt/ast-starter/config
+      JAVA_OPTS: -Xms128m -Xmx256m -Dspring.profiles.active=production
+      CLOUD_CONFIG_PATH: /home/spring/config
       CLOUD_CONFIG_AUTH_ENABLED: "true"
       CLOUD_CONFIG_USERNAME: test
       CLOUD_CONFIG_PASSWORD: test123
     ports:
       - 8888:8888
     volumes:
-      - /opt/ast-starter/config:/opt/ast-starter/config
+      - /opt/ast-starter/config:/home/spring/config
     networks:
       - ast_starter
     logging:

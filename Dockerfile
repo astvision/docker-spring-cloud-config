@@ -20,4 +20,5 @@ WORKDIR /home/spring
 COPY --chown=spring:spring --from=build /home/spring/target/*.war app.war
 
 EXPOSE 8888
-ENTRYPOINT ["java", "-jar", "app.war"]
+# ENTRYPOINT ["java" "-jar", "app.war"]
+ENTRYPOINT java $JAVA_OPTS -jar app.war
