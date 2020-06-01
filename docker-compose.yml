@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  tomcat:
+  cloud-config:
     container_name: ast-cloud-config
     image: astvision/spring-cloud-config
     #image: ast-spring-cloud-config
